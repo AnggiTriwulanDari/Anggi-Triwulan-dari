@@ -1,0 +1,57 @@
+// Fungsi untuk menambahkan elemen ke dalam array
+function addElement(array, element) {
+    array.push(element);
+    console.log(`Elemen "${element}" berhasil ditambahkan.`);
+}
+
+// Fungsi untuk membaca elemen pada indeks tertentu
+function getElementAtIndex(array, index) {
+    if (index >= 0 && index < array.length) {
+        return array[index];
+    }
+    throw new Error("Indeks di luar jangkauan");
+}
+
+// Fungsi untuk memperbarui elemen pada indeks tertentu
+function updateElementAtIndex(array, index, newElement) {
+    if (index >= 0 && index < array.length) {
+        array[index] = newElement;
+        console.log(`Elemen pada indeks ${index} berhasil diperbarui menjadi "${newElement}".`);
+    } else {
+        throw new Error("Indeks di luar jangkauan");
+    }
+}
+
+// Fungsi untuk menghapus elemen pada indeks tertentu
+function deleteElementAtIndex(array, index) {
+    if (index >= 0 && index < array.length) {
+        let deletedElement = array.splice(index, 1);
+        console.log(`Elemen "${deletedElement}" pada indeks ${index} berhasil dihapus.`);
+    } else {
+        throw new Error("Indeks di luar jangkauan");
+    }
+}
+
+// Contoh penggunaan
+let angka = [10, 20, 30];
+let kata = ["satu", "dua", "tiga"];
+
+// Create
+addElement(angka, 40);        // Tambah elemen 40 ke array angka
+addElement(kata, "empat");    // Tambah elemen "empat" ke array kata
+
+// Read
+console.log(getElementAtIndex(angka, 1));  // Output: 20
+console.log(getElementAtIndex(kata, 0));   // Output: "satu"
+
+// Update
+updateElementAtIndex(angka, 2, 35);        // Ubah elemen indeks 2 menjadi 35
+updateElementAtIndex(kata, 1, "lima");     // Ubah elemen indeks 1 menjadi "lima"
+
+// Delete
+deleteElementAtIndex(angka, 0);            // Hapus elemen pertama dari array angka
+deleteElementAtIndex(kata, 2);             // Hapus elemen ketiga dari array kata
+
+// Tampilkan hasil akhir array
+console.log("Array angka setelah operasi CRUD:", angka);  // Output: [20, 35, 40]
+console.log("Array kata setelah operasi CRUD:", kata);    // Output: ["satu", "lima"]
