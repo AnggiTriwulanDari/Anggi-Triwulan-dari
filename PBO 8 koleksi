@@ -1,0 +1,69 @@
+// Menggunakan Array
+console.log("Try programiz.pro");
+let listMahasiswa = ["Budi", "Siti", "Agus"];
+console.log("========== Array CRUD ===========");
+
+// Menambahkan elemen baru
+listMahasiswa.push("Ani");
+console.log("Create:", listMahasiswa); // Output: ["Budi", "Siti", "Agus", "Ani"]
+
+// Menampilkan jumlah elemen dalam list
+console.log("Read - Size:", listMahasiswa.length); // Output: 4
+
+// Memperbarui elemen pada indeks tertentu
+listMahasiswa[2] = "Agus Baru"; // Mengubah "Agus" menjadi "Agus Baru"
+console.log("Update:", listMahasiswa); // Output: ["Budi", "Siti", "Agus Baru", "Ani"]
+
+// Menghapus elemen terakhir
+listMahasiswa.pop();
+console.log("Delete Last Element:", listMahasiswa); // Output: ["Budi", "Siti", "Agus Baru"]
+console.log("====================================================");
+
+// Menggunakan Set
+let setMahasiswa = new Set(["Budi", "Siti", "Agus"]);
+console.log("========== Set CRUD ==========");
+
+// Menambahkan elemen baru
+setMahasiswa.add("Ani");
+console.log("Create:", setMahasiswa); // Output: Set(4) {"Budi", "Siti", "Agus", "Ani"}
+
+// Menampilkan jumlah elemen dalam set
+console.log("Read - Size:", setMahasiswa.size); // Output: 4
+
+// Update : Menghapus elemen dan menambahkan elemen baru
+setMahasiswa.delete("Siti");
+setMahasiswa.add("Ujang");
+console.log("Update Siti to Ujang:", setMahasiswa); // Output: Set(4) {"Budi", "Ani", "Agus", "Ujang"}
+
+// Menghapus elemen dari set
+setMahasiswa.delete("Agus");
+console.log("Delete 'Agus':", setMahasiswa); // Output: Set(3) {"Budi", "Ani", "Ujang"}
+
+// Membersihkan semua elemen dalam set
+setMahasiswa.clear();
+console.log("Delete All:", setMahasiswa); // Output: Set(0) {}
+console.log("====================================================");
+
+// Menggunakan Map
+let mapNilai = new Map();
+console.log("========== Map CRUD ==========");
+
+// Menambahkan pasangan key-value baru
+mapNilai.set("Budi", 90);
+mapNilai.set("Siti", 85);
+console.log("Create:", mapNilai); // Output: Map(2) {"Budi" => 90, "Siti" => 85}
+
+// Menampilkan jumlah pasangan key-value dalam map
+console.log("Read - Size:", mapNilai.size); // Output: 2
+
+// Memperbarui nilai berdasarkan key
+mapNilai.set("Budi", 95); // Mengubah nilai "Budi" menjadi 95
+console.log("Update Budi's Score:", mapNilai); // Output: Map(2) {"Budi" => 95, "Siti" => 85}
+
+// Menghapus entry berdasarkan key
+mapNilai.delete("Siti");
+console.log("Delete 'Siti':", mapNilai); // Output: Map(1) {"Budi" => 95}
+
+// Membersihkan semua pasangan key-value dalam map
+mapNilai.clear();
+console.log("Delete All:", mapNilai); // Output: Map(0) {}
