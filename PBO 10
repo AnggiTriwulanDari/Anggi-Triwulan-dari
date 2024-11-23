@@ -1,0 +1,54 @@
+<div id='content'></div>
+
+<script>
+  const pbo = {
+    model: {
+      mahasiswa: [
+        { username: 'roni', pin: 'roni123' },
+        { username: 'yanto', pin: 'yanto123' },
+        { username: 'hadi', pin: 'hadi123' },
+      ],
+    },
+    view: {
+      signform: function () {
+        return `
+          <label for="username">Username:</label>
+          <input type='text' id='username'><br/>
+          <label for="pin">PIN:</label>
+          <input type='password' id='pin'><br/>
+          <button id='login'>Login</button>
+          <button id='cancel'>Cancel</button>
+        `;
+      },
+    },
+    controller: {
+      signform: function () {
+        document.getElementById('content').innerHTML = pbo.view.signform();
+        document.getElementById('login').onclick = pbo.controller.signin;
+        document.getElementById('cancel').onclick = pbo.controller.signout;
+      },
+      signin: function () {
+        const username = document.getElementById('username').value;
+        const pin = document.getElementById('pin').value;
+
+        const user = pbo.model.mahasiswa.find(
+          (m) => m.username === username && m.pin === pin
+        );
+
+        if (user) {
+          alert(`Selamat datang, ${user.username}!`);
+        } else {
+          alert('Username atau PIN salah!');
+        }
+      },
+      signout: function () {
+        document.getElementById('username').value = '';
+        document.getElementById('pin').value = '';
+        alert('Form telah direset.');
+      },
+    },
+  };
+
+  // Memunculkan form login
+  pbo.controller.signform();
+</script>
